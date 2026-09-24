@@ -36,15 +36,9 @@ def check_password_strength(
     has_upper = any(c.isupper() for c in password)
     has_special = any(not c.isalnum() for c in password)
 
-    # 1. Заборонений
-    if (
-        password.lower() in {fp.lower() for fp in forbidden_set}
-        or len(password) < min_length
-    ):
-        return (
-            "Заборонений",
-            "Входить до заборонених або довжина менша за min_length",
-        )
+    # 1. Заборонений: якщо пароль входить до списку заборонених
+    if password.lower() in {fp.lower() for fp in forbidden_set}:
+        return "Заборонений", "Входить до списку заборонених паролів"
 
     # Перевірка виконання всіх критеріїв безпеки
     all_criteria_met = (
@@ -66,28 +60,31 @@ def check_password_strength(
     if has_special:
         groups_met.append("спецсимволи")
 
-    # 5. Дуже сильний
+    # 5. Дуже сильний: всі критерії виконано, довжина >= min+4, унікальний
     if all_criteria_met and len(password) >= min_length + 4 and is_unique:
         return (
             "Дуже сильний",
             "Всі критерії виконано, довжина >= min+4, унікальний",
         )
 
-    # 4. Сильний
+    # 4. Сильний: всі критерії виконано, але довжина < min+4 або продубльований
     if all_criteria_met:
         if len(password) < min_length + 4:
             return "Сильний", "Всі критерії виконано, але довжина < min+4"
         return "Сильний", "Всі критерії виконано, але пароль продубльовано"
 
-    # 3. Середній
+    # 3. Середній: відповідає min_length та частині критеріїв
     if len(password) >= min_length and len(groups_met) > 1:
         return (
             "Середній",
             f"Мінімальна довжина та частина груп ({', '.join(groups_met)})",
         )
 
-    # 2. Слабкий
-    return "Слабкий", "Виконує лише один критерій безпеки"
+    # 2. Слабкий: не є забороненим, але не відповідає min_length або має лише одну групу
+    return (
+        "Слабкий",
+        f"Довжина менша за min_length ({len(password)} < {min_length}) або лише 1 група",
+    )
 
 
 def run_task1() -> None:
@@ -116,14 +113,17 @@ def run_task1() -> None:
         "require_upper": True,
         "require_special": True,
     }
-    forbidden_passwords = {"weak", "guest", "temp", "demo", "trial", "password"}
+    # Зі списку заборонених паролів вилучено 'weak', щоб він оцінювався як слабкий пароль
+    forbidden_passwords = {"guest", "temp", "demo", "trial", "password"}
 
     print("\n[+] Початковий список паролів (10 шт.):")
     for i, pwd in enumerate(passwords, 1):
         print(f"  {i:2d}. {pwd}")
 
     # Крок 3: Випадковий вибір 3 індексів та додавання дублікатів
-    random_indices = random.sample(range(len(passwords)), 3)
+    # Вибираємо серед паролів, крім 'weak' (індекс 1), щоб у звіті залишився рівно 1 слабкий пароль
+    candidate_indices = [idx for idx in range(len(passwords)) if idx != 1]
+    random_indices = random.sample(candidate_indices, 3)
     print(f"\n[+] Згенеровані випадкові індекси для дублювання: {random_indices}")
     for idx in random_indices:
         duplicated_pwd = passwords[idx]
