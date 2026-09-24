@@ -1,0 +1,87 @@
+[
+    {
+        "event": "login",
+        "user": "ai_sec_lead",
+        "result": "success",
+        "timestamp": "2026-09-24 08:57:29",
+        "args": [
+            "ai_sec_lead",
+            "********"
+        ],
+        "kwargs": {
+            "users_db": "<users_db: 10 users>",
+            "salt": "00013"
+        }
+    },
+    {
+        "event": "login",
+        "user": "ai_sec_lead",
+        "result": "failure",
+        "timestamp": "2026-09-24 08:57:29",
+        "args": [
+            "ai_sec_lead",
+            "********"
+        ],
+        "kwargs": {
+            "users_db": "<users_db: 10 users>",
+            "salt": "00013"
+        }
+    },
+    {
+        "event": "login",
+        "user": "unregistered_user",
+        "result": "failure",
+        "timestamp": "2026-09-24 08:57:29",
+        "args": [
+            "unregistered_user",
+            "********"
+        ],
+        "kwargs": {
+            "users_db": "<users_db: 10 users>",
+            "salt": "00013"
+        }
+    },
+    {
+        "event": "login",
+        "user": "ml_researcher",
+        "result": "success",
+        "timestamp": "2026-09-24 08:57:29",
+        "args": [
+            "ml_researcher",
+            "********"
+        ],
+        "kwargs": {
+            "users_db": "<users_db: 10 users>",
+            "salt": "00013"
+        }
+    },
+    {
+        "event": "login",
+        "user": "soc_analyst",
+        "result": "failure",
+        "timestamp": "2026-09-24 08:57:29",
+        "args": [
+            "soc_analyst",
+            "********"
+        ],
+        "kwargs": {
+            "users_db": "<users_db: 10 users>",
+            "salt": "00013"
+        }
+    },
+    {
+        "event": "login",
+        "user": "",
+        "result": "failure",
+        "timestamp": "2026-09-24 08:57:29",
+        "args": [
+            "",
+            "********"
+        ],
+        "kwargs": {
+            "users_db": "<users_db: 10 users>",
+            "salt": "00013"
+        },
+        "error": "Ім'я користувача не може бути порожнім!"
+    }
+]
