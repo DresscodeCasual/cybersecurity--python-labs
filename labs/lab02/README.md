@@ -3,6 +3,8 @@
 - **Студент:** Кулиняк Сергій Тарасович
 - **Група:** КБ-201
 - **Варіант:** 13 (Сканер витоків конфіденційних даних / PII Exfiltration Scanner)
+- **Репозиторій GitHub:** [cybersecurity--python-labs](https://github.com/DresscodeCasual/cybersecurity--python-labs)
+- **Коміт реалізації:** `489da3d`
 
 ---
 
