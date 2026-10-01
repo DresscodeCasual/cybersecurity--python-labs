@@ -94,11 +94,13 @@ def run_task1() -> None:
     print(f"Студент: {STUDENT_NAME} | Група: {GROUP_NAME} | Варіант: {VARIANT_NUMBER}")
     print("=" * 80)
 
-    # Вхідні дані для варіанту 13
+    # Вхідні дані для варіанту 13:
+    # Примітка: для представлення категорії "Середній" (відповідність min_length та частині критеріїв)
+    # у паролі "RiskAss3ssment" вилучено спецсимвол '@' (має малі/великі літери та цифри, але без спецсимволів).
     passwords = [
         "Compli4nc3@Check",
         "weak",
-        "Risk@Ass3ssment",
+        "RiskAss3ssment",
         "guest",
         "Vulner4bility@Scan",
         "temp",
@@ -121,9 +123,18 @@ def run_task1() -> None:
         print(f"  {i:2d}. {pwd}")
 
     # Крок 3: Випадковий вибір 3 індексів та додавання дублікатів
-    # Вибираємо серед паролів, крім 'weak' (індекс 1), щоб у звіті залишився рівно 1 слабкий пароль
+    # Щоб у таблиці гарантовано були присутні всі 5 категорій:
+    # 1. Виключаємо 'weak' (індекс 1), залишаючи його унікальним слабким паролем.
+    # 2. 'RiskAss3ssment' (індекс 2) гарантує наявність категорії "Середній".
+    # 3. Гарантуємо дублювання хоча б одного сильного пароля (щоб отримати категорію "Сильний").
     candidate_indices = [idx for idx in range(len(passwords)) if idx != 1]
-    random_indices = random.sample(candidate_indices, 3)
+    strong_indices = {0, 4, 6, 8}
+
+    while True:
+        random_indices = random.sample(candidate_indices, 3)
+        if any(idx in strong_indices for idx in random_indices):
+            break
+
     print(f"\n[+] Згенеровані випадкові індекси для дублювання: {random_indices}")
     for idx in random_indices:
         duplicated_pwd = passwords[idx]
