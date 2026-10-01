@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Lab test data exceptions
+!labs/lab02/data/**/*.log

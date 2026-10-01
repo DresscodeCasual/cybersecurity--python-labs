@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "student_name": "Кулиняк Сергій Тарасович",
+    "group_name": "КБ-201",
+    "variant_number": 13,
+    "timestamp_utc": "2026-10-01T04:57:51.495838+00:00",
+    "scan_directory": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan",
+    "pattern_filter": "all",
+    "mask_applied": true,
+    "total_files_scanned": 4,
+    "total_pii_detected": 15
+  },
+  "summary_counts": {
+    "Email Addresses": 4,
+    "IPv4 Addresses": 4,
+    "Phone Numbers": 4,
+    "Credit Card Numbers": 3
+  },
+  "findings": [
+    {
+      "pii_type": "Email Addresses",
+      "raw_value": "c****l@example.test",
+      "masked_value": "c****l@example.test",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/exports/export.json",
+      "line_number": 4
+    },
+    {
+      "pii_type": "IPv4 Addresses",
+      "raw_value": "203.0.113.***",
+      "masked_value": "203.0.113.***",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/exports/export.json",
+      "line_number": 5
+    },
+    {
+      "pii_type": "Email Addresses",
+      "raw_value": "d****e@example.test",
+      "masked_value": "d****e@example.test",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/exports/export.json",
+      "line_number": 8
+    },
+    {
+      "pii_type": "Phone Numbers",
+      "raw_value": "+44 20***-**58",
+      "masked_value": "+44 20***-**58",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/exports/export.json",
+      "line_number": 9
+    },
+    {
+      "pii_type": "Credit Card Numbers",
+      "raw_value": "4000-****-****-0002",
+      "masked_value": "4000-****-****-0002",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/exports/export.json",
+      "line_number": 12
+    },
+    {
+      "pii_type": "Email Addresses",
+      "raw_value": "a****e@example.test",
+      "masked_value": "a****e@example.test",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/logs/app.log",
+      "line_number": 1
+    },
+    {
+      "pii_type": "IPv4 Addresses",
+      "raw_value": "192.0.2.***",
+      "masked_value": "192.0.2.***",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/logs/app.log",
+      "line_number": 1
+    },
+    {
+      "pii_type": "Phone Numbers",
+      "raw_value": "+380 6***-**67",
+      "masked_value": "+380 6***-**67",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/logs/app.log",
+      "line_number": 2
+    },
+    {
+      "pii_type": "Credit Card Numbers",
+      "raw_value": "4111-****-****-1111",
+      "masked_value": "4111-****-****-1111",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/logs/app.log",
+      "line_number": 3
+    },
+    {
+      "pii_type": "IPv4 Addresses",
+      "raw_value": "198.51.100.***",
+      "masked_value": "198.51.100.***",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/logs/app.log",
+      "line_number": 4
+    },
+    {
+      "pii_type": "Email Addresses",
+      "raw_value": "b****h@example.test",
+      "masked_value": "b****h@example.test",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/notes/users.txt",
+      "line_number": 2
+    },
+    {
+      "pii_type": "Phone Numbers",
+      "raw_value": "+1-202***-**47",
+      "masked_value": "+1-202***-**47",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/notes/users.txt",
+      "line_number": 3
+    },
+    {
+      "pii_type": "Phone Numbers",
+      "raw_value": "050****567",
+      "masked_value": "050****567",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/notes/users.txt",
+      "line_number": 4
+    },
+    {
+      "pii_type": "IPv4 Addresses",
+      "raw_value": "10.20.30.***",
+      "masked_value": "10.20.30.***",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/notes/users.txt",
+      "line_number": 5
+    },
+    {
+      "pii_type": "Credit Card Numbers",
+      "raw_value": "5555-****-****-4444",
+      "masked_value": "5555-****-****-4444",
+      "file_path": "/home/serg/cybersecurity-python-labs/labs/lab02/data/data_v13/scan/notes/users.txt",
+      "line_number": 6
+    }
+  ]
+}
